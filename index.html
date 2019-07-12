@@ -1,0 +1,37 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prime numbers</title>
+  </head>
+  <body>
+    <script>
+      let isNumberPrime = true;
+      let number = parseInt(prompt("Digite un número: "));
+      
+      if(number <= 1){
+        isNumberPrime = false;
+      } else {
+        if(number !== 2){
+          if(number % 2 === 0){
+            isNumberPrime = false;
+          } else {
+            for(let i = 3; i <= Math.sqrt(number); i += 2){
+              if(number % i === 0){
+                isNumberPrime = false;
+                break;
+              }
+            }
+          }
+        }
+      }
+      if(isNumberPrime){
+        console.log("Es primo");
+      } else {
+        console.log("No es primo");
+      }
+    </script>
+  </body>
+  </html>
